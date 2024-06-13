@@ -109,7 +109,33 @@
 
 
 /* Mobile Devices (up to 600px) */
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+    .gameContainer {
+        flex-wrap: wrap;
+    }
+
+    .gameInfo h1 {
+        font-size: 20px;
+    }
+
+    .gameInfo {
+        margin: 60px 0;
+    }
+
+    #turn {
+        font-size: 20px;
+    }
+
+    .box {
+        font-size: 20px;
+    }
+
+    .container {
+
+        grid-template-columns: repeat(3, 20vw);
+        grid-template-rows: repeat(3, 20vw);
+    }
+}
 
 /* Tablets (600px to 768px) */
 @media only screen and (min-width: 601px) and (max-width: 768px) {}
