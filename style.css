@@ -27,6 +27,8 @@
     justify-content: center;
     /* background-color: yellow; */
     margin-top: 50px;
+    gap: 10px;
+
 }
 
 .container {
@@ -51,6 +53,7 @@
 
 .gameInfo h1 {
     font-family: "Roboto", sans-serif;
+    margin-right: 30px;
 }
 
 .subText {
@@ -112,6 +115,7 @@
 @media only screen and (max-width: 600px) {
     .gameContainer {
         flex-wrap: wrap;
+        margin-top: 30px;
     }
 
     .gameInfo h1 {
@@ -119,7 +123,7 @@
     }
 
     .gameInfo {
-        margin: 60px 0;
+        margin-top: 20px;
     }
 
     #turn {
@@ -127,13 +131,13 @@
     }
 
     .box {
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .container {
 
-        grid-template-columns: repeat(3, 20vw);
-        grid-template-rows: repeat(3, 20vw);
+        grid-template-columns: repeat(3, 23vw);
+        grid-template-rows: repeat(3, 23vw);
     }
 }
 
