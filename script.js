@@ -7,7 +7,7 @@ const changeTurn = () => {
 }
 
 const checkWin = () => {
-    let boxText = document.getElementsByClassName('boxtext')
+    let boxtext = document.getElementsByClassName('boxtext');
     let wins = [
         [0, 1, 2],
         [3, 4, 5],
@@ -19,13 +19,34 @@ const checkWin = () => {
         [2, 4, 6],
     ]
     wins.forEach(e => {
-        if ((boxText[e[0]].innerText === boxText[e[1]].innerText) && (boxText[e[1]].innerText === boxText[e[2]].innerText) && (boxText[e[0]].innerText !== "")) {
-            document.querySelector('.info').innerText = boxText[e[0]].innerText + " Won"
+        if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
+            document.querySelector('.info').innerText = boxtext[e[0]].innerText + " Won"
             gameOver = true
-            document.querySelector(".imgbox").getElementsByTagName('img')[0].style.width = "200px"
+            document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "200px";
+            const container = document.getElementById('containerBox')
+            const children = container.children;
+            const child0 = children[e[0]];
+            const child1 = children[e[1]];
+            const child2 = children[e[2]];
+            child0.style.backgroundColor = "yellow"
+            child1.style.backgroundColor = "yellow"
+            child2.style.backgroundColor = "yellow"
         }
-    });
+        else if (!gameOver) {
+            let allFilled = true;
+            for (let i = 0; i < boxtext.length; i++) {
+                if (boxtext[i].innerText === "") {
+                    allFilled = false;
+                    break;
+                }
+            }
+            if (allFilled) {
+                document.querySelector('.info').innerText = "Match Drawn";
+                gameOver = true;
+            }
+        }
 
+    })
 }
 
 
@@ -51,6 +72,14 @@ Array.from(boxes).forEach((element) => {
 
 let reset = document.getElementById("reset")
 reset.addEventListener('click', () => {
-    location.reload();
+    location.reload()
+    // let boxtexts = document.querySelectorAll('.boxtext');
+    // Array.from(boxtexts).forEach(element => {
+    //     element.innerText = ""
+    // });
+    // turn = "X";
+    // gameOver = false
+    // document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
+    // document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
 }
 )
