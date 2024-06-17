@@ -69,17 +69,21 @@ Array.from(boxes).forEach((element) => {
 
 }
 )
-
 let reset = document.getElementById("reset")
 reset.addEventListener('click', () => {
-    location.reload()
-    // let boxtexts = document.querySelectorAll('.boxtext');
-    // Array.from(boxtexts).forEach(element => {
-    //     element.innerText = ""
-    // });
-    // turn = "X";
-    // gameOver = false
-    // document.getElementsByClassName("info")[0].innerText = "Turn for " + turn;
-    // document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
-}
-)
+    let boxtexts = document.querySelectorAll('.boxtext');
+    Array.from(boxtexts).forEach(element => {
+        element.innerText = ""
+    });
+
+    turnPlayer = "X";
+    gameOver = false;
+    document.getElementsByClassName("info")[0].innerText = "Turn for " + turnPlayer;
+    document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px";
+
+    let boxes = document.getElementsByClassName("box");
+    Array.from(boxes).forEach((element) => {
+        element.style.backgroundColor = "";
+    });
+});
+
